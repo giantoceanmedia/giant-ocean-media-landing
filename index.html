@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giant Ocean Media | Agencia de Marketing Digital</title>
+    <meta name="description" content="Estrategia, creatividad y automatización con IA para hacer crecer tu marca. Convertimos tu presencia digital en ingresos reales.">
+    <meta name="keywords" content="marketing digital, SEO, SEM, redes sociales, publicidad pagada, IA, automatización, branding, desarrollo web">
+    <meta property="og:title" content="Giant Ocean Media | Agencia de Marketing Digital">
+    <meta property="og:description" content="Estrategia, creatividad y automatización con IA para hacer crecer tu marca.">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="canonical" href="https://giantoceanmedia.com">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --electric-blue: #0066FF;
+            --electric-blue-light: #E8F0FE;
+            --electric-blue-glow: rgba(0, 102, 255, 0.15);
+            --gold: #C9A227;
+            --gold-light: #F5E6A3;
+            --gold-bg: rgba(201, 162, 39, 0.08);
+            --black: #0A0A0A;
+            --dark: #1A1A1A;
+            --white: #FFFFFF;
+            --bg: #FAFBFF;
+            --bg-section: #F4F6FB;
+            --text-primary: #0A0A0A;
+            --text-secondary: #5A6170;
+            --text-muted: #8B92A0;
+            --border: rgba(0,0,0,0.06);
+            --card-bg: #FFFFFF;
+            --card-shadow: 0 2px 20px rgba(0,0,0,0.04);
+            --card-shadow-hover: 0 12px 40px rgba(0,0,0,0.08);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'DM Sans', sans-serif; background-color: var(--bg); color: var(--text-primary); overflow-x: hidden; }
+        nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 16px 40px; display: flex; justify-content: space-between; align-items: center; background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); transition: all 0.3s ease; }
+        .logo { font-family: 'Sora', sans-serif; font-size: 1.4rem; font-weight: 800; letter-spacing: -0.5px; display: flex; gap: 6px; }
+        .logo-giant { color: var(--black); } .logo-ocean { color: var(--electric-blue); } .logo-media { color: var(--gold); }
+        .nav-links { display: flex; gap: 32px; align-items: center; list-style: none; }
+        .nav-links a { color: var(--text-secondary); text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: color 0.3s; }
+        .nav-links a:hover { color: var(--text-primary); }
+        .lang-toggle { background: var(--electric-blue-light); border: none; color: var(--electric-blue); padding: 7px 16px; border-radius: 20px; cursor: pointer; font-size: 0.8rem; font-weight: 700; transition: all 0.3s; font-family: 'DM Sans', sans-serif; }
+        .lang-toggle:hover { background: rgba(0, 102, 255, 0.15); }
+        .nav-cta { background: var(--electric-blue) !important; color: var(--white) !important; padding: 10px 24px; border-radius: 8px; font-weight: 600 !important; transition: all 0.3s !important; box-shadow: 0 4px 16px var(--electric-blue-glow); }
+        .nav-cta:hover { transform: translateY(-1px); box-shadow: 0 6px 24px rgba(0, 102, 255, 0.25); }
+        .mobile-menu-btn { display: none; background: none; border: none; color: var(--text-primary); font-size: 1.5rem; cursor: pointer; }
+        .hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 140px 20px 80px; position: relative; overflow: hidden; background: var(--black); }
+        .hero-canvas { position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; }
+        .hero::before { content: ''; position: absolute; top: -300px; left: 50%; transform: translateX(-50%); width: 900px; height: 900px; background: radial-gradient(circle, rgba(0, 102, 255, 0.1) 0%, transparent 70%); pointer-events: none; z-index: 0; }
+        .hero::after { content: ''; position: absolute; bottom: -200px; right: -200px; width: 600px; height: 600px; background: radial-gradient(circle, rgba(201, 162, 39, 0.08) 0%, transparent 70%); pointer-events: none; z-index: 0; }
+        .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(201, 162, 39, 0.1); border: 1px solid rgba(201, 162, 39, 0.2); padding: 8px 20px; border-radius: 50px; font-size: 0.85rem; color: var(--gold-light); margin-bottom: 32px; animation: fadeInUp 0.8s ease; font-weight: 600; position: relative; z-index: 1; }
+        .hero-badge::before { content: ''; width: 8px; height: 8px; background: var(--gold); border-radius: 50%; animation: pulse 2s infinite; }
+        .hero h1 { font-family: 'Sora', sans-serif; font-size: clamp(3rem, 7vw, 5.5rem); font-weight: 800; line-height: 1.05; letter-spacing: -3px; margin-bottom: 24px; animation: fadeInUp 0.8s ease 0.1s both; position: relative; z-index: 1; color: var(--white); }
+        .hero h1 .highlight { background: linear-gradient(135deg, var(--electric-blue), var(--gold)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .hero-sub { font-size: clamp(1rem, 2vw, 1.2rem); color: rgba(255,255,255,0.6); max-width: 580px; line-height: 1.7; margin-bottom: 48px; animation: fadeInUp 0.8s ease 0.2s both; position: relative; z-index: 1; }
+        .hero-buttons { display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; animation: fadeInUp 0.8s ease 0.3s both; position: relative; z-index: 1; }
+        .btn-primary { background: var(--electric-blue); color: var(--white); padding: 16px 36px; border-radius: 10px; text-decoration: none; font-weight: 700; font-size: 1rem; transition: all 0.3s; box-shadow: 0 4px 20px var(--electric-blue-glow); border: none; cursor: pointer; font-family: 'DM Sans', sans-serif; }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(0, 102, 255, 0.25); }
+        .btn-secondary { background: transparent; color: var(--white); padding: 16px 36px; border-radius: 10px; text-decoration: none; font-weight: 600; font-size: 1rem; border: 1.5px solid rgba(255,255,255,0.2); transition: all 0.3s; cursor: pointer; font-family: 'DM Sans', sans-serif; }
+        .btn-secondary:hover { border-color: rgba(255,255,255,0.5); background: rgba(255,255,255,0.05); }
+        .stats { display: flex; justify-content: center; gap: 80px; padding: 64px 20px; background: var(--black); position: relative; z-index: 1; }
+        .stat { text-align: center; }
+        .stat-number { font-family: 'Sora', sans-serif; font-size: clamp(2.2rem, 4vw, 3rem); font-weight: 800; background: linear-gradient(135deg, var(--gold), var(--gold-light)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .stat-label { font-size: 0.9rem; color: rgba(255,255,255,0.6); margin-top: 6px; font-weight: 500; }
+        .services { padding: 120px 20px; max-width: 1200px; margin: 0 auto; }
+        .section-label { font-family: 'DM Sans', sans-serif; font-size: 0.85rem; color: var(--electric-blue); font-weight: 700; text-transform: uppercase; letter-spacing: 3px; margin-bottom: 14px; }
+        .section-title { font-family: 'Sora', sans-serif; font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; letter-spacing: -1.5px; margin-bottom: 60px; line-height: 1.12; color: var(--black); }
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+        .service-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 16px; padding: 36px 30px; transition: all 0.4s ease; position: relative; overflow: hidden; box-shadow: var(--card-shadow); }
+        .service-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--electric-blue), var(--gold)); opacity: 0; transition: opacity 0.4s; }
+        .service-card:hover { transform: translateY(-4px); box-shadow: var(--card-shadow-hover); border-color: rgba(0, 102, 255, 0.12); }
+        .service-card:hover::before { opacity: 1; }
+        .service-icon { width: 50px; height: 50px; border-radius: 12px; background: var(--electric-blue-light); display: flex; align-items: center; justify-content: center; font-size: 1.4rem; margin-bottom: 20px; }
+        .service-card h3 { font-family: 'Sora', sans-serif; font-size: 1.2rem; font-weight: 700; margin-bottom: 10px; color: var(--black); letter-spacing: -0.3px; }
+        .service-card p { color: var(--text-secondary); font-size: 0.92rem; line-height: 1.65; }
+        .testimonials { padding: 120px 20px; background: var(--bg-section); }
+        .testimonials-inner { max-width: 1200px; margin: 0 auto; }
+        .testimonials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 28px; margin-top: 60px; }
+        .wa-phone { background: #0B141A; border-radius: 20px; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.15); transition: transform 0.3s ease; }
+        .wa-phone:hover { transform: translateY(-6px); }
+        .wa-header { background: #1F2C34; padding: 12px 14px; display: flex; align-items: center; gap: 10px; }
+        .wa-header-back { color: #00A884; font-size: 1.1rem; }
+        .wa-avatar { width: 34px; height: 34px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.8rem; color: white; }
+        .av1 { background: linear-gradient(135deg, #667eea, #764ba2); }
+        .av2 { background: linear-gradient(135deg, #f093fb, #f5576c); }
+        .av3 { background: linear-gradient(135deg, #4facfe, #00f2fe); }
+        .wa-contact-info { flex: 1; }
+        .wa-contact-name { font-size: 0.92rem; font-weight: 600; color: #E9EDEF; }
+        .wa-contact-status { font-size: 0.7rem; color: #8696A0; }
+        .wa-header-icons { display: flex; gap: 16px; color: #AEBAC1; font-size: 0.95rem; }
+        .wa-chat { background: #0B141A; background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.015'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"); padding: 18px 14px; min-height: 270px; display: flex; flex-direction: column; gap: 5px; }
+        .wa-date { align-self: center; background: #182229; color: #8696A0; font-size: 0.68rem; padding: 4px 12px; border-radius: 8px; margin-bottom: 8px; font-weight: 500; }
+        .wa-msg { max-width: 85%; padding: 7px 11px 3px; border-radius: 8px; font-size: 0.86rem; line-height: 1.4; position: relative; word-wrap: break-word; }
+        .wa-msg-in { background: #1F2C34; color: #E9EDEF; align-self: flex-start; border-top-left-radius: 2px; }
+        .wa-msg-out { background: #005C4B; color: #E9EDEF; align-self: flex-end; border-top-right-radius: 2px; }
+        .wa-msg-time { font-size: 0.62rem; color: rgba(255,255,255,0.4); text-align: right; margin-top: 3px; display: flex; justify-content: flex-end; align-items: center; gap: 3px; }
+        .wa-check { color: #53BDEB; font-size: 0.68rem; }
+        .wa-bottom { background: #1F2C34; padding: 8px 10px; display: flex; align-items: center; gap: 8px; }
+        .wa-input { flex: 1; background: #2A3942; border: none; border-radius: 20px; padding: 9px 14px; color: #8696A0; font-size: 0.82rem; font-family: 'DM Sans', sans-serif; }
+        .wa-send-btn { width: 38px; height: 38px; border-radius: 50%; background: #00A884; border: none; color: white; display: flex; align-items: center; justify-content: center; font-size: 0.95rem; }
+        .contact { padding: 120px 20px; max-width: 800px; margin: 0 auto; text-align: center; }
+        .contact-form { background: var(--card-bg); border: 1px solid var(--border); border-radius: 20px; padding: 48px 40px; margin-top: 48px; text-align: left; box-shadow: var(--card-shadow); }
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+        .form-group { margin-bottom: 16px; }
+        .form-group label { display: block; font-size: 0.85rem; font-weight: 600; color: var(--text-primary); margin-bottom: 8px; }
+        .form-group input, .form-group select, .form-group textarea { width: 100%; background: var(--bg-section); border: 1.5px solid rgba(0,0,0,0.08); border-radius: 10px; padding: 14px 16px; color: var(--text-primary); font-size: 0.95rem; font-family: 'DM Sans', sans-serif; transition: all 0.3s; outline: none; }
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--electric-blue); box-shadow: 0 0 0 3px rgba(0, 102, 255, 0.1); background: var(--white); }
+        .form-group textarea { resize: vertical; min-height: 100px; }
+        .form-group select option { background: var(--white); color: var(--text-primary); }
+        .form-submit { width: 100%; padding: 16px; margin-top: 8px; }
+        footer { background: var(--black); padding: 40px 20px; text-align: center; }
+        .footer-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+        .footer-copy { color: rgba(255,255,255,0.5); font-size: 0.85rem; }
+        .footer-links { display: flex; gap: 24px; }
+        .footer-links a { color: rgba(255,255,255,0.5); text-decoration: none; font-size: 0.85rem; transition: color 0.3s; }
+        .footer-links a:hover { color: var(--electric-blue); }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+        .fade-in { opacity: 0; transform: translateY(25px); transition: all 0.6s ease; }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+        @media (max-width: 768px) { nav { padding: 14px 20px; } .nav-links { display: none; position: absolute; top: 100%; left: 0; right: 0; background: rgba(255,255,255,0.98); backdrop-filter: blur(20px); flex-direction: column; padding: 24px 20px; gap: 20px; border-bottom: 1px solid var(--border); } .nav-links.active { display: flex; } .mobile-menu-btn { display: block; } .stats { flex-direction: column; gap: 28px; } .form-row { grid-template-columns: 1fr; } .contact-form { padding: 32px 24px; } .testimonials-grid { grid-template-columns: 1fr; max-width: 400px; margin-left: auto; margin-right: auto; } .footer-inner { flex-direction: column; text-align: center; } }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo"><span class="logo-giant">GIANT</span><span class="logo-ocean">OCEAN</span><span class="logo-media">MEDIA</span></div>
+        <button class="mobile-menu-btn" onclick="toggleMenu()">&#9776;</button>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#services" data-es="Servicios" data-en="Services">Servicios</a></li>
+            <li><a href="#testimonials" data-es="Testimonios" data-en="Testimonials">Testimonios</a></li>
+            <li><a href="#contact" data-es="Contacto" data-en="Contact">Contacto</a></li>
+            <li><button class="lang-toggle" onclick="toggleLanguage()">EN / ES</button></li>
+            <li><a href="#contact" class="nav-cta" data-es="Empezar" data-en="Get Started">Empezar</a></li>
+        </ul>
+    </nav>
+    <section class="hero" id="heroSection">
+        <canvas class="hero-canvas" id="starfield"></canvas>
+        <div class="hero-badge" data-es="Agencia de Marketing Digital" data-en="Digital Marketing Agency">Agencia de Marketing Digital</div>
+        <h1><span data-es="Si No Lo Intentas," data-en="If You Don't Try,">Si No Lo Intentas,</span><br><span class="highlight" data-es="Nunca Lo Sabr\u00e1s." data-en="You'll Never Know.">Nunca Lo Sabr\u00e1s.</span></h1>
+        <p class="hero-sub" data-es="Estrategia, creatividad y automatizaci\u00f3n con IA para hacer crecer tu marca. Convertimos tu presencia digital en ingresos reales." data-en="Strategy, creativity &amp; AI-powered automation to grow your brand. We turn digital presence into real revenue.">Estrategia, creatividad y automatizaci\u00f3n con IA para hacer crecer tu marca. Convertimos tu presencia digital en ingresos reales.</p>
+        <div class="hero-buttons">
+            <a href="#contact" class="btn-primary" data-es="Hablemos" data-en="Let's Talk">Hablemos</a>
+            <a href="#services" class="btn-secondary" data-es="Ver Servicios" data-en="See Our Services">Ver Servicios</a>
+        </div>
+    </section>
+    <section class="stats">
+        <div class="stat fade-in"><div class="stat-number">+50</div><div class="stat-label" data-es="Clientes Felices" data-en="Happy Clients">Clientes Felices</div></div>
+        <div class="stat fade-in"><div class="stat-number">$5M+</div><div class="stat-label" data-es="Inversi\u00f3n Gestionada" data-en="Ad Spend Managed">Inversi\u00f3n Gestionada</div></div>
+        <div class="stat fade-in"><div class="stat-number">$15M+</div><div class="stat-label" data-es="En Ventas Generadas" data-en="Revenue Generated">En Ventas Generadas</div></div>
+    </section>
+    <section class="services" id="services">
+        <div class="section-label fade-in" data-es="Lo Que Hacemos" data-en="What We Do">Lo Que Hacemos</div>
+        <h2 class="section-title fade-in" data-es="Servicios Diseñados Para Escalar Tu Negocio" data-en="Services Built to Scale Your Business">Servicios Diseñados Para Escalar Tu Negocio</h2>
+        <div class="services-grid">
+            <div class="service-card fade-in"><div class="service-icon">🔍</div><h3 data-es="SEO y SEM" data-en="SEO &amp; SEM">SEO y SEM</h3><p data-es="Domina los resultados de búsqueda con estrategias orgánicas y de pago basadas en datos que traen tráfico calificado a tu puerta." data-en="Dominate search results with data-driven organic and paid strategies that bring qualified traffic to your door.">Domina los resultados de búsqueda con estrategias orgánicas y de pago basadas en datos que traen tráfico calificado a tu puerta.</p></div>
+            <div class="service-card fade-in"><div class="service-icon">📱</div><h3 data-es="Redes Sociales y Contenido" data-en="Social Media &amp; Content">Redes Sociales y Contenido</h3><p data-es="Contenido que detiene el scroll y gestión de comunidades que construye audiencias leales en cada plataforma." data-en="Scroll-stopping content and community management that builds loyal audiences across every platform.">Contenido que detiene el scroll y gestión de comunidades que construye audiencias leales en cada plataforma.</p></div>
+            <div class="service-card fade-in"><div class="service-icon">🎯</div><h3 data-es="Publicidad Pagada" data-en="Paid Advertising">Publicidad Pagada</h3><p data-es="Campañas de alto ROI en Meta, Google y TikTok. Gestionamos tu presupuesto como si fuera nuestro — cada dólar optimizado." data-en="High-ROI campaigns on Meta, Google &amp; TikTok. We manage your budget like it's our own — every dollar optimized.">Campañas de alto ROI en Meta, Google y TikTok. Gestionamos tu presupuesto como si fuera nuestro — cada dólar optimizado.</p></div>
+            <div class="service-card fade-in"><div class="service-icon">🌐</div><h3 data-es="Desarrollo Web y Branding" data-en="Web Development &amp; Branding">Desarrollo Web y Branding</h3><p data-es="Sitios web e identidades de marca que no solo se ven bien — convierten visitantes en clientes." data-en="Websites and brand identities that don't just look good — they convert visitors into customers.">Sitios web e identidades de marca que no solo se ven bien — convierten visitantes en clientes.</p></div>
+            <div class="service-card fade-in"><div class="service-icon">🤖</div><h3 data-es="IA y Automatización" data-en="AI &amp; Automation">IA y Automatización</h3><p data-es="Flujos de trabajo inteligentes, chatbots y herramientas de IA que te ahorran horas y multiplican tu impacto de marketing." data-en="Smart workflows, chatbots and AI-powered tools that save you hours and multiply your marketing impact.">Flujos de trabajo inteligentes, chatbots y herramientas de IA que te ahorran horas y multiplican tu impacto de marketing.</p></div>
+            <div class="service-card fade-in"><div class="service-icon">📊</div><h3 data-es="Analítica y Estrategia" data-en="Analytics &amp; Strategy">Analítica y Estrategia</h3><p data-es="Dashboards personalizados e insights estratégicos para que siempre sepas qué funciona — y qué sigue." data-en="Custom dashboards and strategic insights so you always know what's working — and what's next.">Dashboards personalizados e insights estratégicos para que siempre sepas qué funciona — y qué sigue.</p></div>
+        </div>
+    </section>
+    <section class="testimonials" id="testimonials">
+        <div class="testimonials-inner">
+            <div class="section-label fade-in" data-es="Resultados Reales" data-en="Real Results">Resultados Reales</div>
+            <h2 class="section-title fade-in" data-es="Lo Que Dicen Nuestros Clientes" data-en="What Our Clients Say">Lo Que Dicen Nuestros Clientes</h2>
+            <div class="testimonials-grid">
+                <div class="wa-phone fade-in">
+                    <div class="wa-header"><span class="wa-header-back">←</span><div class="wa-avatar av1">ML</div><div class="wa-contact-info"><div class="wa-contact-name">María López</div><div class="wa-contact-status">en línea</div></div><div class="wa-header-icons"><span>📹</span><span>📞</span><span>⋮</span></div></div>
+                    <div class="wa-chat"><div class="wa-date">Hoy</div><div class="wa-msg wa-msg-in">Carlos!! Acabo de revisar el dashboard 😱 ¡¡Llegamos a $42K en ventas este mes solo con los anuncios!!<div class="wa-msg-time">10:23 AM</div></div><div class="wa-msg wa-msg-in">Honestamente al principio estaba escéptica pero realmente cumplieron. El ROAS está increíble 🔥<div class="wa-msg-time">10:24 AM</div></div><div class="wa-msg wa-msg-out">Eso pasa cuando la estrategia es correcta 💪 Y apenas estamos empezando María, espera al Q2<div class="wa-msg-time">10:26 AM <span class="wa-check">✓✓</span></div></div><div class="wa-msg wa-msg-in">La mejor inversión que he hecho para mi negocio sin duda 👏<div class="wa-msg-time">10:27 AM</div></div></div>
+                    <div class="wa-bottom"><div class="wa-input">Escribe un mensaje</div><button class="wa-send-btn">➞</button></div>
+                </div>
+                <div class="wa-phone fade-in">
+                    <div class="wa-header"><span class="wa-header-back">←</span><div class="wa-avatar av2">JT</div><div class="wa-contact-info"><div class="wa-contact-name">Jake Thompson</div><div class="wa-contact-status">online</div></div><div class="wa-header-icons"><span>📹</span><span>📞</span><span>⋮</span></div></div>
+                    <div class="wa-chat"><div class="wa-date">Yesterday</div><div class="wa-msg wa-msg-in">Bro the automation you set up is saving us like 20 hours a week no joke<div class="wa-msg-time">3:41 PM</div></div><div class="wa-msg wa-msg-in">My team can finally focus on actually running the business instead of posting content manually 😅<div class="wa-msg-time">3:42 PM</div></div><div class="wa-msg wa-msg-out">That's the whole point brother 🤝 Work smarter not harder. Next up we automate your email flows too<div class="wa-msg-time">3:45 PM <span class="wa-check">✓✓</span></div></div><div class="wa-msg wa-msg-in">Let's goooo 🚀🚀<div class="wa-msg-time">3:45 PM</div></div></div>
+                    <div class="wa-bottom"><div class="wa-input">Type a message</div><button class="wa-send-btn">➞</button></div>
+                </div>
+                <div class="wa-phone fade-in">
+                    <div class="wa-header"><span class="wa-header-back">←</span><div class="wa-avatar av3">SP</div><div class="wa-contact-info"><div class="wa-contact-name">Sofía Petrov</div><div class="wa-contact-status">últ. vez hoy a las 9:15 AM</div></div><div class="wa-header-icons"><span>📹</span><span>📞</span><span>⋮</span></div></div>
+                    <div class="wa-chat"><div class="wa-date">Lunes</div><div class="wa-msg wa-msg-in">Hey! Update rápido — desde que empezamos con Giant Ocean nuestro tráfico web pasó de 800 a 12K visitantes mensuales en 4 meses 📈<div class="wa-msg-time">9:02 AM</div></div><div class="wa-msg wa-msg-in">La estrategia de SEO está funcionando increíble. Ya estamos #1 para 3 de nuestras keywords principales<div class="wa-msg-time">9:03 AM</div></div><div class="wa-msg wa-msg-out">¡¡Me encanta escuchar eso Sofía!! 🙌 El motor de contenido finalmente está arrancando. Lo orgánico es el regalo que sigue dando<div class="wa-msg-time">9:10 AM <span class="wa-check">✓✓</span></div></div><div class="wa-msg wa-msg-in">En serio gracias 🙏 Los estoy recomendando a todos los que conozco jaja<div class="wa-msg-time">9:12 AM</div></div></div>
+                    <div class="wa-bottom"><div class="wa-input">Escribe un mensaje</div><button class="wa-send-btn">➞</button></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="contact" id="contact">
+        <div class="section-label fade-in" data-es="¿Listo Para Crecer?" data-en="Ready to Grow?">¿Listo Para Crecer?</div>
+        <h2 class="section-title fade-in" data-es="Construyamos Algo Gigante Juntos" data-en="Let's Build Something Giant Together">Construyamos Algo Gigante Juntos</h2>
+        <p class="hero-sub fade-in" style="margin: 0 auto 0;" data-es="Cuéntanos sobre tu negocio y tus metas. Te responderemos en menos de 24 horas con una propuesta estratégica gratuita." data-en="Tell us about your business and goals. We'll get back to you within 24 hours with a free strategy proposal.">Cuéntanos sobre tu negocio y tus metas. Te responderemos en menos de 24 horas con una propuesta estratégica gratuita.</p>
+        <form class="contact-form fade-in" onsubmit="handleSubmit(event)">
+            <div class="form-row"><div class="form-group"><label data-es="Nombre Completo" data-en="Full Name">Nombre Completo</label><input type="text" required></div><div class="form-group"><label data-es="Correo Electrónico" data-en="Email">Correo Electrónico</label><input type="email" required></div></div>
+            <div class="form-row"><div class="form-group"><label data-es="Teléfono" data-en="Phone">Teléfono</label><input type="tel"></div><div class="form-group"><label data-es="Servicio Que Necesitas" data-en="Service Needed">Servicio Que Necesitas</label><select required><option value="" disabled selected data-es="Selecciona un servicio..." data-en="Select a service...">Selecciona un servicio...</option><option value="seo" data-es="SEO y SEM" data-en="SEO &amp; SEM">SEO y SEM</option><option value="social" data-es="Redes Sociales y Contenido" data-en="Social Media &amp; Content">Redes Sociales y Contenido</option><option value="ads" data-es="Publicidad Pagada" data-en="Paid Advertising">Publicidad Pagada</option><option value="web" data-es="Desarrollo Web y Branding" data-en="Web Development &amp; Branding">Desarrollo Web y Branding</option><option value="ai" data-es="IA y Automatización" data-en="AI &amp; Automation">IA y Automatización</option><option value="full" data-es="Paquete Completo" data-en="Full Package">Paquete Completo</option></select></div></div>
+            <div class="form-group"><label data-es="Cuéntanos sobre tu proyecto" data-en="Tell us about your project">Cuéntanos sobre tu proyecto</label><textarea placeholder="¿Cuáles son tus metas? ¿Cuál es tu situación actual?" data-es-placeholder="¿Cuáles son tus metas? ¿Cuál es tu situación actual?" data-en-placeholder="What are your goals? What's your current situation?"></textarea></div>
+            <button type="submit" class="btn-primary form-submit" data-es="Enviar Mensaje ➞" data-en="Send Message ➞">Enviar Mensaje ➞</button>
+        </form>
+    </section>
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-copy">© 2026 Giant Ocean Media. <span data-es="Todos los derechos reservados." data-en="All rights reserved.">Todos los derechos reservados.</span></div>
+            <div class="footer-links"><a href="mailto:giant.ocean.media@gmail.com">giant.ocean.media@gmail.com</a></div>
+        </div>
+    </footer>
+    <script>
+        let currentLang = 'es';
+        function toggleLanguage() {
+            currentLang = currentLang === 'es' ? 'en' : 'es';
+            document.querySelectorAll('[data-es]').forEach(el => {
+                const text = el.getAttribute('data-' + currentLang);
+                if (text) { if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') { el.placeholder = text; } else if (el.classList.contains('wa-input')) { el.textContent = text; } else { el.innerHTML = text; } }
+            });
+            document.querySelectorAll('[data-' + currentLang + '-placeholder]').forEach(el => { el.placeholder = el.getAttribute('data-' + currentLang + '-placeholder'); });
+            document.querySelector('.lang-toggle').textContent = currentLang === 'es' ? 'EN / ES' : 'ES / EN';
+            document.documentElement.lang = currentLang;
+        }
+        function toggleMenu() { document.getElementById('navLinks').classList.toggle('active'); }
+        document.querySelectorAll('.nav-links a').forEach(link => { link.addEventListener('click', () => { document.getElementById('navLinks').classList.remove('active'); }); });
+        const observer = new IntersectionObserver((entries) => { entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); }); }, { threshold: 0.1 });
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+        function handleSubmit(e) { e.preventDefault(); const btn = e.target.querySelector('.form-submit'); const originalText = btn.innerHTML; btn.innerHTML = currentLang === 'es' ? '\u00a1Enviado! \u2713' : 'Sent! \u2713'; btn.style.background = '#00C853'; btn.style.boxShadow = '0 4px 20px rgba(0, 200, 83, 0.2)'; setTimeout(() => { btn.innerHTML = originalText; btn.style.background = ''; btn.style.boxShadow = ''; e.target.reset(); }, 3000); }
+        function animateCounters() { document.querySelectorAll('.stat-number').forEach(counter => { const text = counter.textContent; const target = parseFloat(text.replace(/[^0-9.]/g, '')); const hasPlus = text.includes('+'); const hasDollar = text.includes('$'); const hasM = text.includes('M'); let current = 0; const step = target / (2000 / 16); function update() { current += step; if (current >= target) { counter.textContent = text; return; } let display = ''; if (hasPlus && !hasM) display += '+'; if (hasDollar) display += '$'; display += hasM ? current.toFixed(0) : Math.floor(current); if (hasM) display += 'M+'; counter.textContent = display; requestAnimationFrame(update); } new IntersectionObserver((entries, obs) => { if (entries[0].isIntersecting) { update(); obs.disconnect(); } }, { threshold: 0.5 }).observe(counter); }); } animateCounters();
+        window.addEventListener('scroll', () => { const nav = document.querySelector('nav'); if (window.scrollY > 50) { nav.style.padding = '10px 40px'; nav.style.boxShadow = '0 2px 20px rgba(0,0,0,0.06)'; } else { nav.style.padding = '16px 40px'; nav.style.boxShadow = 'none'; } });
+        (function() { const canvas = document.getElementById('starfield'); if (!canvas) return; const ctx = canvas.getContext('2d'); let stars = []; const STAR_COUNT = 180; function resize() { canvas.width = canvas.parentElement.offsetWidth; canvas.height = canvas.parentElement.offsetHeight; } function initStars() { stars = []; for (let i = 0; i < STAR_COUNT; i++) { stars.push({ x: Math.random() * canvas.width, y: Math.random() * canvas.height, r: Math.random() * 1.5 + 0.3, alpha: Math.random(), speed: Math.random() * 0.02 + 0.005 }); } } function draw() { ctx.clearRect(0, 0, canvas.width, canvas.height); stars.forEach(s => { s.alpha += s.speed; const a = (Math.sin(s.alpha) + 1) / 2; ctx.beginPath(); ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2); ctx.fillStyle = 'rgba(255,255,255,' + (a * 0.6) + ')'; ctx.fill(); }); requestAnimationFrame(draw); } resize(); initStars(); draw(); window.addEventListener('resize', () => { resize(); initStars(); }); })();
+    </script>
+</body>
+</html>
