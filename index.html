@@ -9,6 +9,8 @@
     <meta property="og:description" content="Estrategia, creatividad y automatización con IA para hacer crecer tu marca.">
     <meta property="og:url" content="https://giant-ocean.com">
     <link rel="canonical" href="https://giant-ocean.com">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0%25' stop-color='%230ea5e9'/%3E%3Cstop offset='50%25' stop-color='%230066FF'/%3E%3Cstop offset='100%25' stop-color='%237c3aed'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='8' fill='url(%23g)'/%3E%3Ctext x='16' y='23' text-anchor='middle' font-family='Arial,sans-serif' font-weight='700' font-size='20' fill='white'%3EG%3C/text%3E%3C/svg%3E">
+    <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0%25' stop-color='%230ea5e9'/%3E%3Cstop offset='50%25' stop-color='%230066FF'/%3E%3Cstop offset='100%25' stop-color='%237c3aed'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='180' height='180' rx='40' fill='url(%23g)'/%3E%3Ctext x='90' y='128' text-anchor='middle' font-family='Arial,sans-serif' font-weight='700' font-size='120' fill='white'%3EG%3C/text%3E%3C/svg%3E">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -140,6 +142,43 @@
         .wa-send { width: 36px; height: 36px; border-radius: 50%; background: #00a884; display: flex; align-items: center; justify-content: center; }
         .wa-send svg { width: 18px; height: 18px; fill: #fff; }
 
+        /* PLATFORM DASHBOARD PANELS */
+        .dashboard-panels { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; max-width: 1100px; margin: 0 auto 60px; }
+        .dash-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 24px; transition: transform 0.3s, box-shadow 0.3s; overflow: hidden; position: relative; }
+        .dash-card:hover { transform: translateY(-6px); box-shadow: 0 20px 40px rgba(0,0,0,0.3); }
+        .dash-card-header { display: flex; align-items: center; gap: 10px; margin-bottom: 20px; padding-bottom: 14px; border-bottom: 1px solid rgba(255,255,255,0.06); }
+        .dash-logo { width: 32px; height: 32px; border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+        .dash-logo svg { width: 18px; height: 18px; }
+        .dash-logo.meta { background: #1877F2; }
+        .dash-logo.google { background: #fff; }
+        .dash-logo.ga4 { background: #F9AB00; }
+        .dash-logo.shopify { background: #96bf48; }
+        .dash-platform { font-family: var(--font-display); font-size: 0.82rem; font-weight: 600; color: rgba(255,255,255,0.7); letter-spacing: 0.02em; }
+        .dash-platform span { font-size: 0.68rem; font-weight: 400; color: rgba(255,255,255,0.35); display: block; margin-top: 2px; }
+        .dash-hero-metric { margin-bottom: 18px; }
+        .dash-hero-value { font-family: var(--font-display); font-size: 2rem; font-weight: 800; letter-spacing: -0.03em; line-height: 1.1; }
+        .dash-hero-label { font-size: 0.72rem; color: rgba(255,255,255,0.4); text-transform: uppercase; letter-spacing: 0.08em; margin-top: 4px; }
+        .dash-metrics { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+        .dash-metric-value { font-family: var(--font-display); font-size: 1.05rem; font-weight: 700; color: #fff; }
+        .dash-metric-label { font-size: 0.68rem; color: rgba(255,255,255,0.35); margin-top: 2px; }
+        .dash-bar-chart { display: flex; align-items: flex-end; gap: 3px; height: 40px; margin-top: 16px; padding-top: 12px; border-top: 1px solid rgba(255,255,255,0.05); }
+        .dash-bar { flex: 1; border-radius: 3px 3px 0 0; min-height: 4px; opacity: 0.7; transition: opacity 0.3s; }
+        .dash-card:hover .dash-bar { opacity: 1; }
+        .dash-badge { display: inline-flex; align-items: center; gap: 4px; font-size: 0.68rem; font-weight: 600; padding: 3px 8px; border-radius: 6px; margin-left: 4px; }
+        .dash-badge.up { background: rgba(34,197,94,0.15); color: #22c55e; }
+        .dash-subtitle { text-align: center; max-width: 600px; margin: -20px auto 40px; }
+        .dash-subtitle p { font-size: 0.95rem; color: rgba(255,255,255,0.5); }
+        .testimonials-subtitle { text-align: center; margin: 0 auto 32px; }
+        .testimonials-subtitle p { font-size: 0.95rem; color: rgba(255,255,255,0.5); }
+
+        @media (max-width: 900px) {
+            .dashboard-panels { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+        }
+        @media (max-width: 600px) {
+            .dashboard-panels { grid-template-columns: 1fr; max-width: 340px; }
+            .dash-hero-value { font-size: 1.7rem; }
+        }
+
         /* REDACTED NAME */
         .redacted { background: #3a4a54; color: #3a4a54; border-radius: 3px; padding: 0 2px; user-select: none; letter-spacing: 0.5px; font-size: 0.8em; }
 
@@ -213,6 +252,7 @@
         <a href="#servicios" data-es="Servicios" data-en="Services">Servicios</a>
         <a href="#proceso" data-es="Proceso" data-en="Process">Proceso</a>
         <a href="#testimonios" data-es="Resultados" data-en="Results">Resultados</a>
+
         <a href="#contacto" data-es="Contacto" data-en="Contact">Contacto</a>
         <button class="lang-toggle" onclick="toggleLang()">EN / ES</button>
         <a href="#contacto" class="nav-cta" data-es="Empezar" data-en="Get Started">Empezar</a>
@@ -341,8 +381,131 @@
 <section id="testimonios" class="section testimonials-section">
     <div class="section-header reveal">
         <div class="section-label" data-es="Resultados reales" data-en="Real results">Resultados reales</div>
-        <h2 class="section-title" data-es="Lo que dicen nuestros clientes" data-en="What our clients say">Lo que dicen nuestros clientes</h2>
+        <h2 class="section-title" data-es="Datos reales, clientes reales" data-en="Real data, real clients">Datos reales, clientes reales</h2>
     </div>
+
+    <div class="dash-subtitle reveal">
+        <p data-es="Métricas de campañas reales gestionadas por nuestro equipo" data-en="Metrics from real campaigns managed by our team">Métricas de campañas reales gestionadas por nuestro equipo</p>
+    </div>
+
+    <div class="dashboard-panels reveal">
+        <!-- META ADS -->
+        <div class="dash-card">
+            <div class="dash-card-header">
+                <div class="dash-logo meta"><svg viewBox="0 0 24 24" fill="#fff"><path d="M12 2.04c-5.5 0-10 4.49-10 10.02 0 5 3.66 9.15 8.44 9.9v-7H7.9v-2.9h2.54V9.85c0-2.51 1.49-3.89 3.78-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56v1.88h2.78l-.45 2.9h-2.33v7a10 10 0 008.44-9.9c0-5.53-4.5-10.02-10-10.02z"/></svg></div>
+                <div class="dash-platform">Meta Ads<span data-es="Cuenta de cliente" data-en="Client account">Cuenta de cliente</span></div>
+            </div>
+            <div class="dash-hero-metric">
+                <div class="dash-hero-value" style="color:#58a6ff;">9.65x <span class="dash-badge up">▲</span></div>
+                <div class="dash-hero-label">ROAS</div>
+            </div>
+            <div class="dash-metrics">
+                <div><div class="dash-metric-value">6.00%</div><div class="dash-metric-label">CTR</div></div>
+                <div><div class="dash-metric-value">€10.04</div><div class="dash-metric-label">CPA</div></div>
+                <div><div class="dash-metric-value">510K</div><div class="dash-metric-label" data-es="Impresiones" data-en="Impressions">Impresiones</div></div>
+                <div><div class="dash-metric-value">30.6K</div><div class="dash-metric-label">Clicks</div></div>
+            </div>
+            <div class="dash-bar-chart">
+                <div class="dash-bar" style="height:55%;background:#1877F2;"></div>
+                <div class="dash-bar" style="height:70%;background:#1877F2;"></div>
+                <div class="dash-bar" style="height:45%;background:#1877F2;"></div>
+                <div class="dash-bar" style="height:85%;background:#1877F2;"></div>
+                <div class="dash-bar" style="height:100%;background:#1877F2;"></div>
+                <div class="dash-bar" style="height:78%;background:#1877F2;"></div>
+                <div class="dash-bar" style="height:92%;background:#1877F2;"></div>
+                <div class="dash-bar" style="height:65%;background:#1877F2;"></div>
+            </div>
+        </div>
+
+        <!-- GOOGLE ADS -->
+        <div class="dash-card">
+            <div class="dash-card-header">
+                <div class="dash-logo google"><svg viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 01-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18A10.96 10.96 0 001 12c0 1.78.42 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg></div>
+                <div class="dash-platform">Google Ads<span data-es="Cuenta de cliente" data-en="Client account">Cuenta de cliente</span></div>
+            </div>
+            <div class="dash-hero-metric">
+                <div class="dash-hero-value" style="color:#34A853;">7.49x <span class="dash-badge up">▲</span></div>
+                <div class="dash-hero-label">ROAS</div>
+            </div>
+            <div class="dash-metrics">
+                <div><div class="dash-metric-value">622</div><div class="dash-metric-label" data-es="Conversiones" data-en="Conversions">Conversiones</div></div>
+                <div><div class="dash-metric-value">€40.9K</div><div class="dash-metric-label" data-es="Valor conv." data-en="Conv. value">Valor conv.</div></div>
+                <div><div class="dash-metric-value">1.39M</div><div class="dash-metric-label" data-es="Impresiones" data-en="Impressions">Impresiones</div></div>
+                <div><div class="dash-metric-value">37.8K</div><div class="dash-metric-label">Clicks</div></div>
+            </div>
+            <div class="dash-bar-chart">
+                <div class="dash-bar" style="height:60%;background:#4285F4;"></div>
+                <div class="dash-bar" style="height:80%;background:#34A853;"></div>
+                <div class="dash-bar" style="height:50%;background:#FBBC05;"></div>
+                <div class="dash-bar" style="height:90%;background:#EA4335;"></div>
+                <div class="dash-bar" style="height:100%;background:#4285F4;"></div>
+                <div class="dash-bar" style="height:72%;background:#34A853;"></div>
+                <div class="dash-bar" style="height:88%;background:#FBBC05;"></div>
+                <div class="dash-bar" style="height:68%;background:#EA4335;"></div>
+            </div>
+        </div>
+
+        <!-- GA4 -->
+        <div class="dash-card">
+            <div class="dash-card-header">
+                <div class="dash-logo ga4"><svg viewBox="0 0 24 24" fill="#fff"><path d="M22 12c0 5.52-4.48 10-10 10S2 17.52 2 12 6.48 2 12 2s10 4.48 10 10zm-10-2a2 2 0 100 4 2 2 0 000-4z"/><path d="M12 6v4M12 14v4M6 12h4M14 12h4" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+                <div class="dash-platform">Google Analytics<span data-es="Propiedad de cliente" data-en="Client property">Propiedad de cliente</span></div>
+            </div>
+            <div class="dash-hero-metric">
+                <div class="dash-hero-value" style="color:#F9AB00;">151K</div>
+                <div class="dash-hero-label" data-es="Sesiones (90d)" data-en="Sessions (90d)">Sesiones (90d)</div>
+            </div>
+            <div class="dash-metrics">
+                <div><div class="dash-metric-value">108K</div><div class="dash-metric-label" data-es="Usuarios" data-en="Users">Usuarios</div></div>
+                <div><div class="dash-metric-value">€107K</div><div class="dash-metric-label" data-es="Ingresos" data-en="Revenue">Ingresos</div></div>
+                <div><div class="dash-metric-value">882</div><div class="dash-metric-label" data-es="Compras" data-en="Purchases">Compras</div></div>
+                <div><div class="dash-metric-value">8</div><div class="dash-metric-label" data-es="Canales activos" data-en="Active channels">Canales activos</div></div>
+            </div>
+            <div class="dash-bar-chart">
+                <div class="dash-bar" style="height:100%;background:#F9AB00;"></div>
+                <div class="dash-bar" style="height:60%;background:#E37400;"></div>
+                <div class="dash-bar" style="height:50%;background:#F9AB00;"></div>
+                <div class="dash-bar" style="height:46%;background:#E37400;"></div>
+                <div class="dash-bar" style="height:8%;background:#F9AB00;"></div>
+                <div class="dash-bar" style="height:5%;background:#E37400;"></div>
+                <div class="dash-bar" style="height:4%;background:#F9AB00;"></div>
+                <div class="dash-bar" style="height:3%;background:#E37400;"></div>
+            </div>
+        </div>
+
+        <!-- SHOPIFY -->
+        <div class="dash-card">
+            <div class="dash-card-header">
+                <div class="dash-logo shopify"><svg viewBox="0 0 24 24" fill="#fff"><path d="M15.34 3.27c-.08 0-.15.04-.17.12-.02.07-.42 1.04-.42 1.04a3.2 3.2 0 00-1.64-.51c-2.35 0-3.48 2.95-3.83 4.44l-1.62.5c-.5.16-.52.17-.58.65C6.99 10.2 5 24 5 24l11.69 2V3.32c-.13-.03-.24-.05-.35-.05zm-1.7 2.57l-2.08.64c.4-1.53 1.15-2.27 1.8-2.55.19.5.28 1.2.28 1.91zm-1.35-2.42c.12 0 .23.02.34.05-.86.41-1.78 1.44-2.17 3.5l-1.65.51c.45-1.61 1.55-4.06 3.48-4.06zM14 8.57c-.67.2-1.42.44-2.17.67.42-1.59 1.2-2.37 1.88-2.66.1.37.23.98.29 1.99z"/><path d="M15.52 3.32s-.42-.09-.94-.09c-2.46 0-3.65 3.08-3.65 3.08l-1.98.61S9.97 3.24 13.4 2.18c.93-.29 1.75.07 2.12 1.14z" opacity=".4"/><path d="M16.69 3.27l-.07.01V26l4.31-.74S17.2 3.41 17.18 3.35c-.02-.05-.06-.08-.1-.08h-.39z"/></svg></div>
+                <div class="dash-platform">Shopify<span data-es="Tienda de cliente" data-en="Client store">Tienda de cliente</span></div>
+            </div>
+            <div class="dash-hero-metric">
+                <div class="dash-hero-value" style="color:#96bf48;">$207K</div>
+                <div class="dash-hero-label" data-es="Ventas brutas (90d)" data-en="Gross sales (90d)">Ventas brutas (90d)</div>
+            </div>
+            <div class="dash-metrics">
+                <div><div class="dash-metric-value">663</div><div class="dash-metric-label" data-es="Pedidos" data-en="Orders">Pedidos</div></div>
+                <div><div class="dash-metric-value">$295</div><div class="dash-metric-label">AOV</div></div>
+                <div><div class="dash-metric-value">$194K</div><div class="dash-metric-label" data-es="Ventas netas" data-en="Net sales">Ventas netas</div></div>
+                <div><div class="dash-metric-value">$196K</div><div class="dash-metric-label" data-es="Total ventas" data-en="Total sales">Total ventas</div></div>
+            </div>
+            <div class="dash-bar-chart">
+                <div class="dash-bar" style="height:45%;background:#96bf48;"></div>
+                <div class="dash-bar" style="height:62%;background:#96bf48;"></div>
+                <div class="dash-bar" style="height:78%;background:#96bf48;"></div>
+                <div class="dash-bar" style="height:55%;background:#96bf48;"></div>
+                <div class="dash-bar" style="height:90%;background:#96bf48;"></div>
+                <div class="dash-bar" style="height:100%;background:#96bf48;"></div>
+                <div class="dash-bar" style="height:85%;background:#96bf48;"></div>
+                <div class="dash-bar" style="height:72%;background:#96bf48;"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="testimonials-subtitle reveal">
+        <p data-es="Y esto es lo que dicen nuestros clientes" data-en="And this is what our clients say">Y esto es lo que dicen nuestros clientes</p>
+    </div>
+
     <div class="testimonials-grid reveal">
         <div class="phone-mockup">
             <div class="wa-header"><span class="wa-back">‹</span><div class="wa-avatar av1">AL</div><div class="wa-name-wrap"><div class="wa-name">Ana L. <span class="redacted">██████</span></div><div class="wa-status" data-es="en línea" data-en="online">en línea</div></div><div class="wa-icons">📹 📞 ⋮</div></div>
